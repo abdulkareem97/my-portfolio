@@ -1,13 +1,27 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Define the animation */
+@keyframes fade-in {
+  0% {
+    opacity: 0.2;
+    top: -100vh;
+  }
+  100% {
+    opacity: 1;
+    top: 0;
+  }
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* Apply the animation to an element */
+.lockScreenNotification {
+  position: relative;
+  animation: fade-in 1s;
+}
+
+.lockScreenNotificationClose{
+  transition: all 1s;
+  top: -100vh
+
 }

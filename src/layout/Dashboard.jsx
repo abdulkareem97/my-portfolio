@@ -57,7 +57,7 @@ const Dashboard = ({bg}) => {
               <BsYoutube className='text-red-800' />
             </div>
             <div className='flex justify-center'>
-              <BsBrowserChrome className='text-yellow-500' />
+              <BsBrowserChrome className='text-yellow-500' onClick={()=>handleNavigation('chrome')} />
             </div>
             <div className='flex justify-center'>
               <BsCameraFill className='text-white' onClick={()=>handleNavigation('photo')} />

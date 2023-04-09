@@ -15,6 +15,7 @@ import PlayStore from "./pages/PlayStore/PlayStore";
 import Music from "./pages/Music/Music";
 import Video from "./pages/Video/Video";
 import Photo from "./pages/Photo/Photo";
+import Chrome from "./pages/Chrome/Chrome";
 // import Testing from "./component/testing";
 
 
@@ -64,6 +65,7 @@ function App() {
         <Route path='/music' element={<Music/>}/>
         <Route path='/video' element={<Video/>}/>
         <Route path='/photo' element={<Photo/>}/>
+        <Route path='/chrome' element={<Chrome/>}/>
 
         {/* <Route path='/fact' element={<Fact />}/>
         <Route path='/breeds' element={<Breeds />}/>

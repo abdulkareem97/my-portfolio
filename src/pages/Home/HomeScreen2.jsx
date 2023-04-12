@@ -1,4 +1,4 @@
-import React, { useState, useRef, useLayoutEffect } from 'react';
+import React, { useState, useRef, useLayoutEffect,useEffect } from 'react';
 // import './HomeScreen2.css';
 import { BsFillCircleFill, BsFillCaretLeftFill, BsSquareFill, BsBrowserChrome, BsYoutube, BsArrowLeftCircleFill, BsImageFill } from "react-icons/bs";
 import { IoLogoGoogleticTac,IoImages } from "react-icons/io5";
@@ -234,10 +234,33 @@ const HomeScreen2 = ({changeScreen}) => {
                         </div>
                     </a>
                 </animated.div>
+
+                <WidgetComponent />
+                
             </div>
 
         </div>
     )
+}
+
+
+
+function WidgetComponent() {
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src = "https://d3mkw6s8thqya7.cloudfront.net/integration-plugin.js";
+    script.id = "aisensy-wa-widget";
+    script.setAttribute("widget-id", "TaiQqy");
+    document.body.appendChild(script);
+
+    // Clean up function to remove the script when component is unmounted
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
+
+  return <div></div>;
 }
 
 export default HomeScreen2

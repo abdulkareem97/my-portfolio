@@ -2,7 +2,7 @@ import React, { useState, useRef, useLayoutEffect,useEffect } from 'react';
 // import './HomeScreen2.css';
 import { BsFillCircleFill, BsFillCaretLeftFill, BsSquareFill, BsBrowserChrome, BsYoutube, BsArrowLeftCircleFill, BsImageFill } from "react-icons/bs";
 import { IoLogoGoogleticTac,IoImages } from "react-icons/io5";
-import { FaImage,FaCat } from 'react-icons/fa';
+import { FaImage,FaCat,FaGithub } from 'react-icons/fa';
 // import { SiYoutubesgpaCalculator } from 'react-icons/si';
 import { AiFillCalculator } from 'react-icons/ai';
 import { HiCurrencyDollar } from 'react-icons/hi';
@@ -62,10 +62,11 @@ const HomeScreen2 = ({changeScreen}) => {
         fetchSeriesData().then((temp)=>setTemp(temp));
     }, [parentRef]);
     const catFact = useSpring({ x: 10, y: parentSize.height - 100 });
-    const ticTac = useSpring({ x: parentSize.width - 100, y: parentSize.height - 100 });
+    const ticTac = useSpring({ x: parentSize.width - 100, y: parentSize.height - 310 });
     const currency = useSpring({ x: 150, y: parentSize.height - 100 });
     const numPuz = useSpring({ x: parentSize.width - 100, y: parentSize.height - 210 });
     const todoList = useSpring({ x: 150, y: parentSize.height - 210});
+    const github = useSpring({ x: 150, y: parentSize.height - 310});
     const sgpaCalculator = useSpring({ x: 10, y: parentSize.height - 210 });
 
 
@@ -139,11 +140,29 @@ const HomeScreen2 = ({changeScreen}) => {
             bottom: parentSize.height - 100,
         },
     });
+    const bindLogo7 = useDrag((params) => {
+        github.x.set(params.offset[0]);
+        github.y.set(params.offset[1]);
+    }, {
+        bounds: {
+            left: 0,
+            top: 0,
+            right: parentSize.width - 100,
+            bottom: parentSize.height - 100,
+        },
+    });
 
     return (
         <div className='h-full relative'>
 
-<div className='absolute left-2 top-1/2 text-3xl text-white' onClick={()=>changeScreen(1)} >
+<div className='absolute left-2 top-1/2 text-3xl text-white' onClick={
+    ()=>{
+        changeScreen(1)
+        
+    }
+
+
+} >
                 <BsArrowLeftCircleFill />
 
             </div>
@@ -234,6 +253,19 @@ const HomeScreen2 = ({changeScreen}) => {
                         </div>
                     </a>
                 </animated.div>
+                <animated.div {...bindLogo7()} style={{
+
+                    x: github.x,
+                    y: github.y,
+                    touchAction: 'none',
+                }} >
+                    <a className="absolute" href={'https://github.com/abdulkareem97'}>
+                        <FaGithub className="text-black bg-white rounded-full" style={{ ...childSize }} />
+                        <div className="absolute -bottom-5 left-2  right-0 px-2 py-1  text-white text-xs w-fit">
+                            Githyb
+                        </div>
+                    </a>
+                </animated.div>
 
                 <WidgetComponent />
                 
@@ -251,7 +283,7 @@ function WidgetComponent() {
     script.type = "text/javascript";
     script.src = "https://d3mkw6s8thqya7.cloudfront.net/integration-plugin.js";
     script.id = "aisensy-wa-widget";
-    script.setAttribute("widget-id", "TaiQqy");
+    script.setAttribute("widget-id", "y4AphY");
     document.body.appendChild(script);
 
     // Clean up function to remove the script when component is unmounted

@@ -47,7 +47,7 @@ const HomeScreen1 = ({changeScreen}) => {
         getWeatherData('gulbarga').then((temp) => setTemp(`The temperature in Gulbarga is ${temp}°C.`))
     }, [parentRef]);
     const gallerLogo = useSpring({ x: 10, y: parentSize.height - 100 });
-    const playstore = useSpring({ x: parentSize.width - 100, y: parentSize.height - 100 });
+    const playstore = useSpring({ x: parentSize.width - 100, y: parentSize.height - 210 });
     const wallpaper = useSpring({ x: 150, y: parentSize.height - 210 });
     const profile = useSpring({ x: 150, y: parentSize.height - 100 });
     const music = useSpring({ x: 10, y: parentSize.height - 210 });

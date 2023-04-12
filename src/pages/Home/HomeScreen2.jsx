@@ -267,7 +267,7 @@ const HomeScreen2 = ({changeScreen}) => {
                     </a>
                 </animated.div>
 
-                <WidgetComponent />
+                {/* <WidgetComponent /> */}
                 
             </div>
 
@@ -277,23 +277,7 @@ const HomeScreen2 = ({changeScreen}) => {
 
 
 
-function WidgetComponent() {
-  useEffect(() => {
-    const script = document.createElement("script");
-    script.type = "text/javascript";
-    script.src = "https://d3mkw6s8thqya7.cloudfront.net/integration-plugin.js";
-    script.id = "aisensy-wa-widget";
-    script.setAttribute("widget-id", "y4AphY");
-    document.body.appendChild(script);
 
-    // Clean up function to remove the script when component is unmounted
-    return () => {
-      document.body.removeChild(script);
-    };
-  }, []);
-
-  return <div></div>;
-}
 
 export default HomeScreen2
 

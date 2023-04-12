@@ -1,12 +1,17 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useNavigate } from "react-router-dom";
 
 const LockScreenOpen = () => {
   const [showNotification,setShowNotification] = useState('my-component')
+  // useEffect(() => {
+  //   const script = document.getElementById('aisensy-wa-widget')
+  //   console.log(" script  ",script)
+  //   document.body.removeChild(script)
+  // }, []);
   const navigate = useNavigate()
 
     const handleScreen = ()=> {
-      // navigate('/openNotification')
+      navigate('/')
        
 
     }
